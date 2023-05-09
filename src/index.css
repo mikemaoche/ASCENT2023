@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-block: 40px;
+}
+
+.hamburger .block:first-child {
+    transform-origin: center;
+    transform: translateY(0px) rotate(0deg);
+    transition: transform 0.25s ease-in-out;
+}
+
+.hamburger.transform .block:first-child {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.transform .block:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.transform .block:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+
+.logo::after {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: url("data:image/svg+xml,%3Csvg class='w-6 h-6' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' color='%23f87171'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15 10.5a3 3 0 11-6 0 3 3 0 016 0z' /%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z' /%3E%3C/svg%3E");
+    background-size: contain;
+
+}
+
+.card-exp {
+    transform:
+        perspective(75em)
+        rotateY(14deg);
+}
+
+.scale-in {
+    scale: 75%;
+    animation: scale-in 1s ease-in forwards;
+  }
+  
+  @keyframes scale-in {
+    100% {
+        scale: 100%;
+    }
+  }
+
+
+/* parallax */
+.wrapper{
+    background:rgb(56 189 248);
+    /* background: url(./images/background.png) center center fixed no-repeat;
+    background-size:cover; */
+}
+
+
+.ices-stock{
+    position:fixed;
+    z-index: 0;
+    bottom:0;
+    left:0;
+}
+
+.ice-cubes{
+    position:absolute;
+    z-index: 999;
+    bottom: -10%;
+    left: 0%;
+}
+
+.animate-fog {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:0;
+    bottom:0;
+    z-index: 0;
+    animation: fog 10s linear infinite;
+    background:url("./images/fog.png") repeat-y;
+    background-size: 100% auto;
+}
+
+@keyframes fog {
+    0% {
+        background-position-y: 0px;
+    }
+
+    100% {
+        background-position-y: -100px;
+    }
+}
+
+.aperol{
+    position:absolute;
+    z-index: 10;
+    width: 25%;
+    bottom:0%;
+    right: 2%;
+    transform: translateZ(999px);
+}
+
+.mojito{
+    position:absolute;
+    z-index: 10;
+    width: 25%;
+    bottom:-40%;
+    right: 2%;
+}
+
+
+.fadeIn {
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+    .animate-fog {
+        background:none;
+        animation:none;
+    }
+
+    .mojito{
+        width: 25%;
+        bottom:-5%;
+        right: 5%;
+    }
+
+
+    .ices-stock{
+        position:fixed;
+        z-index: 20;
+    }
+}
