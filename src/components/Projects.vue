@@ -13,39 +13,65 @@ export default {
                     technologies: ["Unity","Visual Studio Code", "Gimp","Soundtrap","Git","Microsoft To Do"],
                 },
                 { 
-                    name:"finance", 
-                    problem:"test",
-                    challenges:"test",
-                    solution:"test", 
-                    video:{ title:"test" , source:"project-feijoa", download:"" },
-                    technologies: ["Test"],
+                    name:"magicbox", 
+                    problem:"Do you know \"Spin The Wheel \" ? This website suggests to users what activities to do by spinning the wheel. My problem with this app is the fact there is no ounce of adrenalin when you use it because you can see all outcomes and do not feel any excitement when you get an activity to do.",
+                    challenges:"",
+                    solution:"So, to remediate this issue, I put a little twist by creating a magic box inspired by \"Magic Ball 8\", a touch of a slot machine and \"Super Mario\". As a result, when you use this mysterious box, you will not know any outcomes in advance. Also, when the user earns a prize, this one feels rewarded whether the result is positive or negative.", 
+                    video:{ title:"The Magic Box - don't know what to do ? spin that little box" , source:"project-feijoa", download:"" },
+                    technologies: ["React","NextJS", "HTML5","CSS3", "Visual Studio Code","Git","Microsoft To Do"],
                 },
                 { 
                     name:"easyorder", 
-                    problem:"At my workplace, I noticed staff are always confused when it is time to take orders because the system is not friendly to users. So, I decided to tackle down this issue.",
-                    challenges:"test",
-                    solution:"test", 
-                    video:{ title:"Take your productivity to the next level with EasyOrder" , source:"project-feijoa", download:"" },
-                    technologies: ["React","HTML5","CSS3","Visual Studio Code","Git","Microsoft To Do"],
+                    problem:"At my workplace, I noticed new staff are always confused when it is time to take orders because the system is not friendly to users. So, I decided to tackle down this issue.",
+                    challenges:"The data structure was the most challenging task of this project because it has many different data types. For example, drinks can be served with ice, without alcohol, in a bottle or glass, etc. Then come to set the environment, I needed to be able to run both the MongoDB serverless and the VUE app together. Also, the process of thinking how to simplify the user experience at its edge. Lastly, create a PDF that takes the table HTML when you print the invoice.",
+                    solution:"To address this issue, I remove most of the complexity when ordering to build a more friendly user environment. Also, add more visual elements to guide the user. Moreover, I change the order when you send an order. For instance, on their system, it requires to choose a table number first and then order. In my designing app, you can order first, then send it and vice versa.", 
+                    video:{ title:"EasyOrder" , source:"project-feijoa", download:"https://github.com/mikemaoche/easyorder" },
+                    technologies: ["React","NextJS", "MongoDB", "HTML5","CSS3","TailwindCSS", "Visual Studio Code","Git","Microsoft To Do"],
                 }
             ],
             index:0,
-            previousIndex:0
+            previousIndex:0,
+            url: '',
+            loading: false,
+            isClick: false
         }
     },
     methods: {
         handleClick (e) {
             this.index = e.target.id - 1;
             if(e.target.id - 1 !== this.previousIndex) {
-                var element = document.getElementById("projectDetails");
-                element.classList.add("fadeIn");
-                setTimeout(() => {
-                    element.classList.remove("fadeIn");
-                },1000)
+                this.loading = true;
+                this.UpdateVideoLink()
+                const video = document.getElementById('videos')
+                let duration = video.duration;
+                const loadingBar = document.getElementById("loading-bar");
+                loadingBar.style.width = "0%";
+                let progress = 0;
+                let buffer = 0;
+                const uploading = setInterval(() => {
+                    if (video.buffered.length > 0) { buffer = video.buffered.end(0) }
+                    progress = (buffer / duration) * 100;
+                    console.log(progress);
+                    if (progress >= 1) { // 1% of data ready then show
+                        loadingBar.style.width = "100%"; 
+                        setTimeout(() => {
+                            this.loading = false;
+                        },1500)
+                        clearInterval(uploading)
+                    } else {
+                        loadingBar.style.width = progress + "%"; 
+                    }
+                }, 100);
             }
             this.previousIndex = this.index;
         },
+        UpdateVideoLink() {
+            this.url = require(`../videos/${this.projects[this.index].video.source}.mp4`)
+        }
     },
+    mounted() {
+        this.UpdateVideoLink();
+    }
 }
 </script>
 
@@ -56,7 +82,7 @@ export default {
             <p class="text-4xl bold">Projects</p>
             <p class="text-slate-400">Why not giving a shot and test out my projects ? 😉</p>
             <!-- list of projects -->
-            <div class="">
+            <div>
                 <ul class="grid grid-cols-2 md:flex md:flex-row leading-relaxed justify-center ...">
                     <li>
                         <button id="1" @click.stop="(e) => handleClick(e)" class="bg-white block border border-2 m-4 p-4 text-center focus:animate-slowbounce hover:text-pink-400 hover:border-pink-400">
@@ -65,7 +91,7 @@ export default {
                     </li>
                     <li>
                         <button id="2" @click.stop="(e) => handleClick(e)" class="bg-white block border border-2 m-4 p-4 text-center focus:animate-slowbounce hover:text-pink-400 hover:border-pink-400">
-                            <img class="pointer-events-none w-32 h-32" src="../images/laptop.png" alt=""> Finance
+                            <img class="pointer-events-none w-32 h-32" src="../images/laptop.png" alt=""> MagicBox
                         </button>
                     </li>
                     <li>
@@ -75,19 +101,25 @@ export default {
                     </li>
                 </ul>
                 <!-- project details -->
-                <div id="projectDetails" class="md:w-4/6 bg-white mx-auto my-4 border border-2 ">
+                <div class="md:w-4/6 bg-white mx-auto my-4 border border-2 ">
                     <div>
                         <p class="text-xl font-bold uppercase m-2 p-2">{{ projects[index].video.title }}</p>
-                        <video class="w-full p-1" controls>
-                            <source :src="require(`../videos/${projects[index].video.source}.mp4`)" type="video/mp4">
+                        <video id="videos" v-show="!loading" :key="url" class="w-full p-1" controls>
+                            <source :src="url" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
+                        <div v-show="loading" class="w-4/12 mx-auto">
+                            <p class="text-center">loading ... </p>
+                            <div class="w-full h-4 bg-gray-200">
+                                <div id="loading-bar" class="h-full bg-green-500 transition-all duration-500"></div>
+                            </div>
+                        </div>
                         <div class="m-2 p-2">
                             <p class="text-xl font-bold">Problem Encounter</p>
                             <p>{{ projects[index].problem }}</p>
                         </div>
                         <div class="m-2 p-2">
-                            <p class="text-xl font-bold">What Challenges I Faced?</p>
+                            <p class="text-xl font-bold">What Challenges I Faced During The Development?</p>
                             <p>{{ projects[index].challenges }}</p>
                         </div>
                         <div class="m-2 p-2">
