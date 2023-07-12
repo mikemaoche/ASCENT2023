@@ -11,14 +11,16 @@ export default {
                     solution:"To satisfy my thrive for the roguelike genre,  I added all the desired elements to my game without reinventing the wheel. Also, I adjust the difficulty as the belligerent gamer I am.", 
                     video: { title:"2D Roguelike Platformer" , source:"project-feijoa" ,download:"https://drive.google.com/file/d/1xsi5Ing6R0DnXkL6WoqnMjplTMqlhoCP/view?usp=share_link"},
                     technologies: ["Unity","Visual Studio Code", "Gimp","Soundtrap","Git","Microsoft To Do"],
+                    website:''
                 },
                 { 
                     name:"magicbox", 
                     problem:"Do you know \"Spin The Wheel \" ? This website suggests to users what activities to do by spinning the wheel. My problem with this app is the fact there is no ounce of adrenalin when you use it because you can see all outcomes and do not feel any excitement when you get an activity to do.",
-                    challenges:"",
+                    challenges:"During my development, I found it difficult to simulate a spinning animation for the rewards like slot machines. What prizes would the user receive? Are those positive or negative? How can I discern them? There are thoughts put into it when it comes to keeping your app engaging.",
                     solution:"So, to remediate this issue, I put a little twist by creating a magic box inspired by \"Magic Ball 8\", a touch of a slot machine and \"Super Mario\". As a result, when you use this mysterious box, you will not know any outcomes in advance. Also, when the user earns a prize, this one feels rewarded whether the result is positive or negative.", 
-                    video:{ title:"The Magic Box - don't know what to do ? spin that little box" , source:"project-feijoa", download:"" },
-                    technologies: ["React","NextJS", "HTML5","CSS3", "Visual Studio Code","Git","Microsoft To Do"],
+                    video:{ title:"The Magic Box - don't know what to do ? spin that little box" , source:"magicbox", download:"https://github.com/mikemaoche/MagicBox" },
+                    technologies: ["React", "JavaScript", "HTML5", "CSS3", "Visual Studio Code","Git","Microsoft To Do"],
+                    website:'https://magicbox.onrender.com/'
                 },
                 { 
                     name:"easyorder", 
@@ -27,6 +29,7 @@ export default {
                     solution:"To address this issue, I remove most of the complexity when ordering to build a more friendly user environment. Also, add more visual elements to guide the user. Moreover, I change the order when you send an order. For instance, on their system, it requires to choose a table number first and then order. In my designing app, you can order first, then send it and vice versa.", 
                     video:{ title:"EasyOrder" , source:"project-feijoa", download:"https://github.com/mikemaoche/easyorder" },
                     technologies: ["React","NextJS", "MongoDB", "HTML5","CSS3","TailwindCSS", "Visual Studio Code","Git","Microsoft To Do"],
+                    website:''
                 }
             ],
             index:0,
@@ -136,6 +139,7 @@ export default {
                         </div>
                         <!-- download button -->
                         <div class="max-w-full m-2 p-2">
+                            <a :href="`${projects[index].website}`" v-if="projects[index].website.length > 0" class="block md:w-3/12 p-2 text-center border border-2 border-pink-100 bg-pink-600 text-white uppercase hover:bg-pink-400" target="_blank" role="button">go online website</a>
                             <a :href="`${projects[index].video.download}`" class="block md:w-3/12 p-2 text-center border border-2 border-pink-100 bg-pink-600 text-white uppercase hover:bg-pink-400" target="_blank" role="button">download</a>
                         </div>
                     </div>
