@@ -27,9 +27,9 @@ export default {
                     problem:"At my workplace, I noticed new staff are always confused when it is time to take orders because the system is not friendly to users. So, I decided to tackle down this issue.",
                     challenges:"The data structure was the most challenging task of this project because it has many different data types. For example, drinks can be served with ice, without alcohol, in a bottle or glass, etc. Then come to set the environment, I needed to be able to run both the MongoDB serverless and the VUE app together. Also, the process of thinking how to simplify the user experience at its edge. Lastly, create a PDF that takes the table HTML when you print the invoice.",
                     solution:"To address this issue, I remove most of the complexity when ordering to build a more friendly user environment. Also, add more visual elements to guide the user. Moreover, I change the order when you send an order. For instance, on their system, it requires to choose a table number first and then order. In my designing app, you can order first, then send it and vice versa.", 
-                    video:{ title:"EasyOrder" , source:"project-feijoa", download:"https://github.com/mikemaoche/easyorder" },
+                    video:{ title:"EasyOrder" , source:"easyorder", download:"https://github.com/mikemaoche/easyorder" },
                     technologies: ["React","NextJS", "MongoDB", "HTML5","CSS3","TailwindCSS", "Visual Studio Code","Git","Microsoft To Do"],
-                    website:''
+                    website:'https://easyorder-beryl.vercel.app/'
                 }
             ],
             index:0,
@@ -94,7 +94,7 @@ export default {
                     </li>
                     <li>
                         <button id="2" @click.stop="(e) => handleClick(e)" class="bg-white block border border-2 m-4 p-4 text-center focus:animate-slowbounce hover:text-pink-400 hover:border-pink-400">
-                            <img class="pointer-events-none w-32 h-32" src="../images/laptop.png" alt=""> MagicBox
+                            <img class="pointer-events-none w-32 h-32" src="../images/magicbox-logo.png" alt=""> MagicBox
                         </button>
                     </li>
                     <li>
