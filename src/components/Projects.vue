@@ -19,16 +19,16 @@ export default {
                     challenges:"During my development, I found it difficult to simulate a spinning animation for the rewards like slot machines. What prizes would the user receive? Are those positive or negative? How can I discern them? There are thoughts put into it when it comes to keeping your app engaging.",
                     solution:"So, to remediate this issue, I put a little twist by creating a magic box inspired by \"Magic Ball 8\", a touch of a slot machine and \"Super Mario\". As a result, when you use this mysterious box, you will not know any outcomes in advance. Also, when the user earns a prize, this one feels rewarded whether the result is positive or negative.", 
                     video:{ title:"The Magic Box - don't know what to do ? spin that little box" , source:"magicbox", download:"https://github.com/mikemaoche/MagicBox" },
-                    technologies: ["React", "JavaScript", "HTML5", "CSS3", "Visual Studio Code","Git","Microsoft To Do"],
+                    technologies: ["React", "JavaScript", "HTML5", "CSS3", "Visual Studio Code","Git","Microsoft To Do","Render.com"],
                     website:'https://magicbox.onrender.com/'
                 },
                 { 
                     name:"easyorder", 
-                    problem:"At my workplace, I noticed new staff are always confused when it is time to take orders because the system is not friendly to users. So, I decided to tackle down this issue.",
-                    challenges:"The data structure was the most challenging task of this project because it has many different data types. For example, drinks can be served with ice, without alcohol, in a bottle or glass, etc. Then come to set the environment, I needed to be able to run both the MongoDB serverless and the VUE app together. Also, the process of thinking how to simplify the user experience at its edge. Lastly, create a PDF that takes the table HTML when you print the invoice.",
-                    solution:"To address this issue, I remove most of the complexity when ordering to build a more friendly user environment. Also, add more visual elements to guide the user. Moreover, I change the order when you send an order. For instance, on their system, it requires to choose a table number first and then order. In my designing app, you can order first, then send it and vice versa.", 
+                    problem:"At my workplace, I noticed new or veteran staff are always confused when it is time to take orders because the system is significantly not user-friendly. So, I decided to tackle this issue.",
+                    challenges:"The MERN architecture approach was the most challenging task of this project because you would need to combine all Web frameworks and deploy them on hosting platforms. Next, it is to deal with various types of data. For example, drinks can be served with ice, without alcohol, in a bottle or glass, etc. Also, the thinking process is about how to push the user experience to its edge. As a result, any staff that are either old or new feel the software should be easy to use. The last hardship that I can think of would be PDF functions that retrieve HTML elements as inputs when you generate the invoice and position them correctly.",
+                    solution:"To address the issue of productivity and misperformance across hospitality staff, I remove most of the complexity when taking a food or drink order. So, it would result in a more stable environment and friendly to the users. On top of it, I add more visual elements to guide the user. Moreover, I change the order when you send an order. For instance, on their system, it requires to choose a table number first and then order. In my designing app, you can order first, then send it and vice versa.", 
                     video:{ title:"EasyOrder" , source:"easyorder", download:"https://github.com/mikemaoche/easyorder" },
-                    technologies: ["React","NextJS", "MongoDB", "HTML5","CSS3","TailwindCSS", "Visual Studio Code","Git","Microsoft To Do"],
+                    technologies: ["MongoDB", "ExpressJS", "React","NodeJS", "NextJS", "HTML5","CSS3","TailwindCSS", "Visual Studio Code","Git","Microsoft To Do","Render.com","Vercel"],
                     website:'https://easyorder-beryl.vercel.app/'
                 }
             ],
