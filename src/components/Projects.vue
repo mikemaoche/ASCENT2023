@@ -88,18 +88,18 @@ export default {
             <div>
                 <ul class="grid grid-cols-2 md:flex md:flex-row leading-relaxed justify-center ...">
                     <li>
-                        <button id="1" @click.stop="(e) => handleClick(e)" class="bg-white block border border-2 m-4 p-4 text-center focus:animate-slowbounce hover:text-pink-400 hover:border-pink-400">
-                            <img class="pointer-events-none w-32 h-32" src="../images/feijoa.png" alt="" > Feijoa
+                        <button id="1" @click.stop="(e) => handleClick(e)" :class="this.index == 0 ? 'animate-slowbounce':''" class="bg-white block border border-2 m-4 p-4 text-center focus:animate-slowbounce hover:text-pink-400 hover:border-pink-400">
+                            <img class="pixelate pointer-events-none w-32 h-32" src="../images/feijoa.png"  alt="Pixel Art" > Feijoa
                         </button>
                     </li>
                     <li>
                         <button id="2" @click.stop="(e) => handleClick(e)" class="bg-white block border border-2 m-4 p-4 text-center focus:animate-slowbounce hover:text-pink-400 hover:border-pink-400">
-                            <img class="pointer-events-none w-32 h-32" src="../images/magicbox-logo.png" alt=""> MagicBox
+                            <img class="pixelate pointer-events-none w-32 h-32" src="../images/magicbox-logo.png"  alt="Pixel Art"> MagicBox
                         </button>
                     </li>
                     <li>
                         <button id="3" @click.stop="(e) => handleClick(e)" class="bg-white block border border-2 m-4 p-4 text-center focus:animate-slowbounce hover:text-pink-400 hover:border-pink-400">
-                            <img class="pointer-events-none w-32 h-32" src="../images/tequila-sunrise.png" alt=""> EasyOrder
+                            <img class="pixelate pointer-events-none w-32 h-32" src="../images/cocktail.png"  alt="Pixel Art"> EasyOrder
                         </button>
                     </li>
                 </ul>

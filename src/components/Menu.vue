@@ -5,7 +5,7 @@
         <div class="flex items-center justify-between space-x-2 m-2 md:m-0">
             <span class="p-2 transition-all duration-500 ease-in hover:text-green-500 uppercase font-bold text-xl">
                 <a class="flex" href="#">
-                    <img src="../images/logo.png">code shaker
+                    <img class="pixelate w-26 h-16" src="../images/logo.png">code shaker
                 </a>
             </span>
             <span :class="windowWidth < 624 ? 'hidden' : 'block'" class=" cursor-default">|</span>

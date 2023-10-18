@@ -8,6 +8,10 @@ html {
     scroll-padding-block: 40px;
 }
 
+.pixelate {
+    image-rendering: pixelated;
+}
+
 .hamburger .block:first-child {
     transform-origin: center;
     transform: translateY(0px) rotate(0deg);

@@ -47,7 +47,7 @@ export default {
                     year:"now", 
                     description:"Bartender/Barista position in Auckland CBD, New Zealand.",
                     readmore:{duration:1, place: "Portofino Viaduct", description:"Working in an Italian restaurant. I team up with front house staff to prepare and deliver a large panel of beverages, serve and look after customers' satisfaction, follow safety protocols according to the liquor act, inventory management, and handle money transactions.", 
-                    otherActivity:"N/A"}
+                    otherActivity:"Acquire LCQ Certificate - 24/08"}
                 },
             ],
             index:0,
